@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" th:href="@{/css/tables.css}">
+
+    <title>[[${pageTitle}]]</title>
+</head>
+
+<body>
+<!-- Importing NavBar -->
+<div th:insert="navbar.html :: navbar"></div>
+
+<div class="container-fluid">
+    <div class="text-center"><h2>[[${pageTitle}]]</h2></div>
+
+    <form th:action="@{/commissions/save}" th:object="${commission}" method="post"
+          style="max-width: 500px; margin: 0 auto;">
+        <div class="border border-secondary rounded p-3">
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label">Id:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{id}" readonly="readonly" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label">Title:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{title}" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label">Address:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{address}" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label">Hours:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{hours}" />
+                </div>
+            </div>
+
+        <div class="mb-3 row">
+            <label class="col-sm-4 col-form-label">Payment:</label>
+            <div class="col-sm-8">
+                <input type="text" th:field="*{payment}" />
+            </div>
+        </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label">Description:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{description}" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label">Client</label>
+                <div class="col-sm-8">
+                    <select th:field="*{client}" class="form-control" required>
+                        <th:block th:each="client : ${clientsList}">
+                            <option th:text="${client.clientName}" th:value="${client.id}" />
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary m-2">Save</button>
+                <button type="button" class="btn btn-secondary" onclick="window.history.back();">Cancel</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
