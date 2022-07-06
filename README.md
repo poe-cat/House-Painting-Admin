@@ -8,7 +8,12 @@
 * [Live](#live)
 
 ## General info
+This is the second (improved) version of admin-paint app. Its purpose is processing and storing data of clients and commissions of house painting business (can be used by any other small business as well). Authenticated user with admin's role can create, read, update and delete data. Regular user 
+can do the first two things.
 
+The users table stores credentials and the roles table stores authorities. The entity relationship between users and roles is many-to-many because user can have one or more roles and a role can be assigned to one or more users.
+
+I plan to expand this project with new functions (some would be useful for my husband's work), for example implementing invoice builder and sensder, or keeping statistics.
 
 ## Technologies
 Project is created with:
@@ -94,4 +99,5 @@ Alternatively, you can use the Spring Boot Maven plugin in root directory:
 ## Live 
 
 Application has been deployed to Heroku. To see how it works live, go to https://house-painting-admin.herokuapp.com/ .
-You can login as admin (username: poe; password: passing123) to have access to editing functions, or regular user (username: blaise; password: passing123) - without access to these functions.
+
+You can login as admin (username: **poe**; password: **passing123**) to have access to editing functions, or regular user (username: **blaise**; password: **passing123**) - without access to these functions.
