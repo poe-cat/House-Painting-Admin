@@ -6,16 +6,38 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" th:href="@{/css/tables.css}">
-    <title>Main Page</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <title>House Painting Admin</title>
 </head>
 <body>
-<!-- Importing NavBar -->
-<div th:insert="navbar.html :: navbar"></div>
-
-<h1>Hello</h1>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+        <li>
+            <a href="/commissions">
+                <span>Commissions</span>
+                <span>Commissions</span>
+            </a>
+        </li>
+        <li>
+            <a href="/clients">
+                <span>Clients</span>
+                <span>Clients</span>
+            </a>
+        </li>
+        <li>
+            <div sec:authorize="isAuthenticated()">
+                <a href="#" th:href="@{/doLogout}" method="POST">
+                    <span>Log out</span>
+                    <span>Log out</span>
+                </a>
+            </div>
+        </li>
+        <li>
+            <div sec:authorize="!isAuthenticated()">
+                <a href="/login">
+                    <span>Log in</span>
+                    <span>Log in</span>
+                </a>
+            </div>
+        </li>
+    </ul>
 </body>
 </html>
