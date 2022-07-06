@@ -13,7 +13,7 @@ can do the first two things.
 
 The users table stores credentials and the roles table stores authorities. The entity relationship between users and roles is many-to-many because user can have one or more roles and a role can be assigned to one or more users.
 
-I plan to expand this project with new functions (some would be useful for my husband's work), for example implementing invoice builder and sensder, or keeping statistics.
+I plan to expand this project with new functions (some would be useful for my husband's work), for example implementing invoice builder and email sender, or keeping statistics.
 
 ## Technologies
 Project is created with:
