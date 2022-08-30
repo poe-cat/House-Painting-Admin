@@ -21,6 +21,15 @@ public class Client {
             cascade = CascadeType.ALL)
     private Set<Commission> commissionSet;
 
+    public Client() {
+    }
+
+    public Client(Integer id, String clientName, String clientDescription, int phoneNumber) {
+        this.id = id;
+        this.clientName = clientName;
+        this.clientDescription = clientDescription;
+        this.phoneNumber = phoneNumber;
+    }
 
     public Integer getId() {
         return id;

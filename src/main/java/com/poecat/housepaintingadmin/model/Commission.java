@@ -22,6 +22,23 @@ public class Commission {
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;
 
+    public Commission() {
+    }
+
+    public Commission(Integer id, String title, String address,
+                      double hours, double payment, String description, Client client) {
+        this.id = id;
+        this.title = title;
+        this.address = address;
+        this.hours = hours;
+        this.payment = payment;
+        this.description = description;
+        this.client = client;
+    }
+
+    public Commission(Client client) {
+        this.client = client;
+    }
 
     public Integer getId() {
         return id;

@@ -16,6 +16,13 @@ public class CommissionService {
     @Autowired
     private CommissionRepository commissionRepository;
 
+    public CommissionService(CommissionRepository commissionRepository) {
+        this.commissionRepository = commissionRepository;
+    }
+
+    public CommissionService() {
+    }
+
     public List<Commission> listAll() {
         return commissionRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
