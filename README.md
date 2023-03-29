@@ -5,15 +5,11 @@
 * [Technologies](#technologies)
 * [Setup MySQL database](#setup-mysql-database)
 * [Running the application locally](#running-the-application-locally)
-* [Live](#live)
+* [Credentials](#credentials)
 
 ## General info
-This is the second (improved) version of admin-paint app. Its purpose is processing and storing data of clients and commissions of house painting business (can be used by any other small business as well). Authenticated user with admin's role can create, read, update and delete data. Regular user 
-can do the first two things.
-
-The users table stores credentials and the roles table stores authorities. The entity relationship between users and roles is many-to-many because user can have one or more roles and a role can be assigned to one or more users.
-
-I plan to expand this project with new functions (some would be useful for my husband's work), for example implementing invoice builder and email sender, or keeping statistics.
+Web application that is capable of processing and storing client and commission data for a house painting business. This app is versatile enough to be used by any small business.
+Authenticated users with admin privileges can create, read, update and delete data, while regular users are only able to create and read data.
 
 ## Technologies
 Project is created with:
@@ -96,7 +92,7 @@ Alternatively, you can use the Spring Boot Maven plugin in root directory:
 
 ```mvn spring-boot:run```
 
-## Live 
+## Credentials 
 
 Application has been deployed to Heroku. To see how it works live, go to https://house-painting-admin.herokuapp.com/ .
 
