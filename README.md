@@ -94,6 +94,4 @@ Alternatively, you can use the Spring Boot Maven plugin in root directory:
 
 ## Credentials 
 
-Application has been deployed to Heroku. To see how it works live, go to https://house-painting-admin.herokuapp.com/ .
-
 You can login as admin (username: **poe**; password: **passing123**) to have access to editing functions, or regular user (username: **blaise**; password: **passing123**) - without access to these functions.
